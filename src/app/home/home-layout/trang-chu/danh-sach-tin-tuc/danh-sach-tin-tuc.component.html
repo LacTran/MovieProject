@@ -1,0 +1,13 @@
+<div class="ds-tin-tuc">
+  <div [ngSwitch]="Chon">
+    <h1 class="text-center display-4">
+        <span class="mx-5"  [ngClass]="{'text-success': Chon==1}" (click)="HienThiDienAnh()">Điện Ảnh</span>
+        <span class="mx-5"  [ngClass]="{'text-success': Chon==2}" (click)="HienThiKhuyenMai()">Khuyến Mãi</span>
+        <span class="mx-5"  [ngClass]="{'text-success': Chon==3}" (click)="HienThiReview()">Review</span>
+    </h1>
+  
+      <app-dien-anh *ngSwitchCase="1"></app-dien-anh>
+      <app-khuyen-mai *ngSwitchCase="2"></app-khuyen-mai>
+      <app-review *ngSwitchCase="3"></app-review>
+    </div>
+  </div>

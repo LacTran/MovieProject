@@ -1,0 +1,53 @@
+<!-- DEMO ANIMATION -->
+<!-- <div [@hieuUngDemo]="status" style="width:500px;height:500px;">
+
+</div> -->
+<!-- Khi nhấn nút này từ màu đỏ sẽ chuyển sang màu xanh dương, di chuyển sang phải 400px -->
+<!-- <button class="btn btn-success" (click)='onAnimate()'>Animate</button> -->
+<!-- END DEMO ANIMATION -->
+<div class="container" style="margin-top:100px">
+    <div class="row">
+      <div class="col-5 mx-auto">
+        <form [@FadeInDown]="status" #formDangNhap="ngForm" (ngSubmit)="DangNhap(formDangNhap.value)" >
+          <h4 class="display-4">Đăng Nhập</h4>
+          
+          <div class="form-group">
+            <label for="">Tài Khoản</label>
+            <input type="text" #txtTaiKhoan="ngModel" required class="form-control" name="TaiKhoan" ngModel>
+              <div *ngIf="txtTaiKhoan.errors && (txtTaiKhoan.touched || txtTaiKhoan.dirty)">
+                <div class="alert alert-danger" *ngIf="txtTaiKhoan.errors.required">
+                  <span>Vui lòng nhập tài khoản</span>
+                </div>
+              </div>
+
+          </div>
+          
+          <div class="form-group">
+            <label for="">Mật Khẩu</label>
+            <input type="text" #txtMatKhau="ngModel" minlength="6" maxlength="15" required class="form-control" name="MatKhau" ngModel>
+              <div class="alert alert-danger" *ngIf="txtMatKhau.errors && (txtMatKhau.touched || txtMatKhau.dirty)">
+                  <div *ngIf="txtMatKhau.errors.required">
+                      <span>Vui lòng nhập mật khẩu</span>
+                    </div>
+                    <div *ngIf="txtMatKhau.errors.minlength || txtMatKhau.errors.maxlength ">
+                      <span>Mật khẩu phải từ 6 đến 20 ký tự</span>
+                    </div>
+              </div>
+          </div>
+          
+          <div class="form-group text-center">
+            <button type="submit" [disabled]="formDangNhap.invalid" class="btn btn-success">Đăng nhập</button>
+            <br>
+            <span>
+              Chưa có tài khoản?
+              <a [routerLink]="['/dangky']" routerLinkActive="router-link-active" >Đăng Ký Ngay.</a>
+            </span>
+          </div>
+        
+        </form>
+  
+      </div>
+    </div>
+</div>
+
+  

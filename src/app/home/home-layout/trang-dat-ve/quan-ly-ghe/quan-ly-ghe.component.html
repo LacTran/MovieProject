@@ -1,0 +1,21 @@
+<div class="contaier">
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <h1 class="display-4 text-center">Quản Lý Ghế</h1>
+        <div class="form-group">
+          <label for="">Số Ghế: </label>
+          <input type="text" class="form-control" #soGhe>
+        </div>
+        <div class="form-group">
+            <label for="">Tên Ghế: </label>
+            <input type="text" class="form-control" #tenGhe>
+        </div>
+        <div class="form-group">
+            <label for="">Giá Ghế: </label>
+            <input type="text" class="form-control" #giaGhe>
+        </div>
+        <button class="btn btn-success" (click)="ThemGhe(soGhe.value,tenGhe.value,giaGhe.value)">Thêm Ghế</button>
+      </div>
+    </div>
+  </div>
+<app-danh-sach-ghe></app-danh-sach-ghe>
