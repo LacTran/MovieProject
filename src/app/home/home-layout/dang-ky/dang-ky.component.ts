@@ -30,7 +30,7 @@ export class DangKyComponent implements OnInit {
     // this.formDK.reset();
  
   }
-
+  
   public CapNhat(){
     this.formDK.setValue({
       HoTen:"trần gia lạc",
@@ -41,7 +41,9 @@ export class DangKyComponent implements OnInit {
       MaLoaiNguoiDung:"QuanTri"
     })
   }
-
+  public Xoa(nguoiDung){
+    
+  }
   ngOnInit() {
     this.NguoiDungSV.LayDanhSachNguoiDung().subscribe(
       (kq:any) => {

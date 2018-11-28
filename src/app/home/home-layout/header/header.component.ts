@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
+import { DangNhapComponent } from '../dang-nhap/dang-nhap.component';
+
+// import $ from 'jquery';
+declare var $: any;
+
 
 @Component({
   selector: 'app-header',
@@ -6,10 +12,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  constructor(private _AuthService: AuthService) {
+  }
 
-  constructor() { }
+  status = this._AuthService.isLogin;
+  userName = this._AuthService.localUser.HoTen;
+
+
+
+
 
   ngOnInit() {
+    $('header').scrollspy({ target: '.header__menu' });
   }
+
 
 }

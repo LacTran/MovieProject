@@ -29,22 +29,28 @@
 
         <div class="form-group">
           <label for="">Họ Tên: </label>
-          <input type="text" [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêếìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+          <input type="text" required [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêếìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
           "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
           "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"' #txtHoTen="ngModel" class="form-control" name="HoTen" ngModel >
             <div class="alert alert-danger" *ngIf="txtHoTen.errors && (txtHoTen.touched || txtHoTen.dirty)">
                 <div *ngIf="txtHoTen.errors.pattern">
                   <span>Họ tên phải là chữ</span>
                 </div>
-            </div>  
+                <div *ngIf="txtHoTen.errors.required">
+                  <span>Vui lòng nhập họ tên</span>
+                </div>
+            </div>
         </div>
 
         <div class="form-group">
           <label for="">Email</label>
-          <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #txtEmail="ngModel"  class="form-control" name="Email" ngModel >
+          <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #txtEmail="ngModel"  class="form-control" name="Email" ngModel >
           <div class="alert alert-danger" *ngIf="txtEmail.errors && (txtEmail.touched || txtEmail.dirty)">
             <div *ngIf="txtEmail.errors.pattern">
               <span>Email không đúng định dạng</span>
+            </div>
+            <div *ngIf="txtEmail.errors.required">
+              <span>Vui lòng nhập Email</span>
             </div>
           </div>
         </div>
@@ -88,6 +94,7 @@
           <th>Email</th>
           <th>Số ĐT</th>
           <th>Ngày Đăng Ký</th>
+          <th>Thao tác</th>
         </tr>
       </thead>
       <tbody>
@@ -98,6 +105,7 @@
           <td>{{nguoiDung.Email}}</td>
           <td>{{nguoiDung.SoDT}}</td>
           <td>{{Today | date:'fullDate'}}</td>
+          <td><button class="btn btn-success"(click)="Xoa()">Xóa</button></td>
         </tr>
       </tbody>
     </table>

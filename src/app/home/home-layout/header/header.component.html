@@ -1,20 +1,20 @@
-<header id="header">
+<!-- <header id="header" data-spy="scroll" data-target=".header__menu" data-offset="">
   <a href="#" class="logo">
       <img src="../../../../assets/img/web-logo.png" alt="">
   </a>
   <nav class="header__menu">
-      <ul class="mb-0">
-          <li>
-              <a href="#">Lịch chiếu</a>
+      <ul class=" nav mb-0">
+          <li class="nav-item">
+              <a class="nav-link" href="#lichchieu">Lịch chiếu</a>
           </li>
-          <li>
-              <a href="#">Cụm rạp</a>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Cụm rạp</a>
           </li>
-          <li>
-              <a href="#">Tin tức</a>
+          <li class="nav-item">
+              <a class="nav-link" href="#tintuc">Tin tức</a>
           </li>
-          <li>
-              <a href="#">Ứng dụng</a>
+          <li class="nav-item">
+              <a class="nav-link" href="#ungdung">Ứng dụng</a>
           </li>
       </ul>
   </nav>
@@ -22,4 +22,52 @@
       <i class="fa fa-user-circle"></i>
       <span>Đăng nhập</span>
   </a>
+</header> -->
+<header id="header">
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a href="#" class="logo">
+            <img src="../../../../assets/img/web-logo.png" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#lichchieu">Lịch chiếu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cụm rạp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tintuc">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ungdung">Ứng dụng</a>
+                </li>
+                <!-- <li class="nav-item" *ngIf="status; else LoginSuccess" >
+                    <a class="nav-link signin" [routerLink]="['/dangnhap']" routerLinkActive="router-link-active"><i class="fa fa-user-circle"></i>Đăng nhập</a>
+                </li>
+                <ng-template #LoginSuccess>
+                    <li>
+                    Xin chào {{userName}}
+                    </li>
+                </ng-template> -->
+            </ul>
+        </div>
+        <a [routerLink]="['/dangnhap']" routerLinkActive="router-link-active" class="signin">
+            <div *ngIf="!status; else LoginSuccess">
+                <i class="fa fa-user-circle"></i>
+                <span>Đăng nhập</span>
+            </div>
+            <ng-template #LoginSuccess>
+                <span>Xin chào {{userName}} </span>
+            </ng-template>
+        </a>
+    </nav>
+
 </header>

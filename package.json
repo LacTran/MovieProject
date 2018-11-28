@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@types/googlemaps": "^3.30.13",
     "@types/jquery": "^3.3.6",
     "angular-font-awesome": "^3.1.2",
     "animation": "^0.1.3",

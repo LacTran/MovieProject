@@ -1,0 +1,17 @@
+.thong-tin-lien-he{
+    min-width:80%;
+}
+.col-md-4 > p {
+    color:white;
+}
+.icon{
+    background-color:white;
+    padding: 5px;
+}
+.icon{
+    background-color: transparent;
+    padding:5px;
+}
+i{
+    color: #5bc0de;
+}

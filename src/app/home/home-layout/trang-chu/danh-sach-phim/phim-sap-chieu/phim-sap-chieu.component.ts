@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterContentChecked, AfterViewInit } from '@angular/core';
-import $ from 'jquery';
+//import * as $ from 'jquery';
 import { PhimService } from '../../../../../services/phim.service';
 
 declare var $:any;

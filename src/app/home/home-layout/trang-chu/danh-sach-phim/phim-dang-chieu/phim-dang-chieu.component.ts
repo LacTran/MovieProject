@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import $ from 'jquery';
-declare var $:any;
+
+//Use Jquery
+declare var $: any;
+declare var swal: any;
 import { PhimService } from '../../../../../services/phim.service';
 import { Phim } from '../../../../../models/phim.model';
 

@@ -12,7 +12,6 @@ export class TrangChiTietComponent implements OnInit {
   ChiTietPhim:any;
   MaPhim:string;
   constructor(private _activateRoute:ActivatedRoute, private _chiTietPhim:PhimService) { }
-
   ngOnInit() {
 
     this._activateRoute.params.subscribe(
@@ -22,10 +21,17 @@ export class TrangChiTietComponent implements OnInit {
           (kq:any) => {
             this.ChiTietPhim = kq;
             console.log(this.ChiTietPhim);
+
+            // console.log(this.ChiTietPhim.LichChieu);
+            
+            let HinhNen = this.ChiTietPhim.HinhAnh;
+            
+            
+
             let mangTrailer = this.ChiTietPhim.Trailer.split('watch?v=');
-            console.log(mangTrailer);
+            // console.log(mangTrailer);
             this.ChiTietPhim.Trailer = mangTrailer[0] + "embed/" + mangTrailer[1];
-            console.log(this.ChiTietPhim);
+            // console.log(this.ChiTietPhim);
           },
             (errors:any) => {
               console.log(errors);

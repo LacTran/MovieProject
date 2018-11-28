@@ -1,8 +1,39 @@
-<div style="margin-top: 100px">
-  <img [src]="ChiTietPhim.HinhAnh">
-  <p>{{ChiTietPhim.TenPhim}}</p>
-  <iframe width="1206" height="452" [src]="ChiTietPhim.Trailer | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
-  <button class="btn btn-success mr-2" *ngFor="let lichChieu of ChiTietPhim.LichChieu" [routerLink]="['/datve',lichChieu.MaLichChieu]" >
-    {{lichChieu.NgayChieuGioChieu | date:'dd/MM, hh:mm'}}
-  </button>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12" id="thongTin">
+      <div id="infoMainTop">
+
+        <div class="styleBlur">
+          <img [src]="ChiTietPhim.HinhAnh" />
+        </div>
+
+        <div class="styleGradient" style="background: linear-gradient(to top, rgb(10, 32, 41), transparent 100%);"></div>
+
+        <div class="row" id="info">
+
+          <div class="col-sm-3 col-xs-4 poster">
+            <img [src]="ChiTietPhim.HinhAnh">
+          </div>
+
+          <div class="col-sm-5 text-white py-5">
+            <h4>{{ChiTietPhim.NgayKhoiChieu | date:'dd.MM.yyyy' }}</h4>
+            <h3>{{ChiTietPhim.TenPhim}}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+              <h3 class="text-center text-white">Trailer Phim</h3>
+              <iframe width="1110" height="480" [src]="ChiTietPhim.Trailer | safe" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe><br>
+              <button class="btn btn-success mr-2 my-auto" *ngFor="let lichChieu of ChiTietPhim.LichChieu" [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                {{lichChieu.NgayChieuGioChieu | date:'dd/MM, hh:mm'}}
+              </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
 </div>

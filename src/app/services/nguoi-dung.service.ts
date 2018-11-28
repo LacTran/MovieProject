@@ -21,6 +21,7 @@ export class NguoiDungService {
 
   public DangKy(nguoiDung:NguoiDung): Observable<any>{
     // let apiDangKy =`http://sv2.myclass.vn/api/QuanLyNguoiDung/ThemNguoiDung`;
+    // let apiDangKy =`https://tintuc03-e122e.firebaseio.com`;
     let apiDangKy =`https://tintuc03-e122e.firebaseio.com/data.json`;
     
     // let headerDK = new Headers();
@@ -32,8 +33,10 @@ export class NguoiDungService {
 
   }
 
+
   public DangNhap(taiKhoan,matKhau): Observable<any>{
-    let apiDangNhap = `http://sv2.myclass.vn/api/QuanLyNguoiDung/DangNhap?taikhoan=darkness&matkhau=123`;
+    // let apiDangNhap = `http://sv2.myclass.vn/api/QuanLyNguoiDung/DangNhap?taikhoan=darkness&matkhau=123`;
+    let apiDangNhap = `http://sv2.myclass.vn/api/QuanLyNguoiDung/DangNhap?taikhoan=${taiKhoan}&matkhau=${matKhau}`;
     let headerDN= new Headers();
     let obServe = this._http.post(apiDangNhap,{headers:headerDN}).pipe(
       map((result:Response) => result.json())
@@ -41,6 +44,17 @@ export class NguoiDungService {
     return obServe;
 
   }
+
+  // Firebase attempt
+  // public DangNhap(taiKhoan,matKhau): Observable<any>{
+  //   let apiDangNhap = `https://tintuc03-e122e.firebaseio.com/data.json`;
+  //   let headerDN= new Headers();
+  //   let obServe = this._http.post(apiDangNhap,{headers:headerDN}).pipe(
+  //     map((result:Response) => result.json())
+  //   );
+  //   return obServe;
+
+  // }
 
   constructor(private _http:Http) { }
 }

@@ -9,7 +9,7 @@ import { Phim } from '../models/phim.model';
 })
 export class PhimService {
   public LayDanhSachPhim():Observable<any>{
-    let apiLayDSP=`http://sv2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP01`;
+    let apiLayDSP=`http://sv2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP03`;
     let obServe= this._http.get(apiLayDSP).pipe(
       map((result:Response) => result.json())
     );

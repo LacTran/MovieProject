@@ -12,7 +12,7 @@ export class DanhSachGheComponent implements OnInit {
   public SoGheConTrong:number= 0;
   //
 
-  num:number = 1;
+
   @Input() demoChange:number
 
 
